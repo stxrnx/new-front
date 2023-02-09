@@ -1,22 +1,24 @@
-<div class="flex flex-row justify-center mt-6 px-4 py-20 min-w-0 overflow-hidden">
-    <div class="w-5/6 h-full rounded-md bg-slate-300">
-      <div class="relative p-2 w-full h-full">
-        <div class="inline-block absolute w-10 pt-6 px-32">
-          <p>Step11111</p>
-          <p>your info</p>
+<!--Box-->
+<div class="flex flex-row justify-center mt-6 p-6 h-screen w-screen">
+  <div class=" w-full h-2/3  bg-slate-300 rounded-md p-4">
+    <!--Immagine e NavBar-->
+    <div class="h-full bg-no-repeat bg-left" style="background-image: url(assets/images/bg-sidebar-desktop.svg);">
+      <div class="absolute inset-0 w-1/3 h-2/3 mt-6 px-8">
+        <div class="mt-12 px-14 py-8">
+          <button type="button" class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-md px-5 py-2.5 text-center mr-2 mb-2">
+            Step 1
+          </button>
         </div>
-        <img src="assets/images/bg-sidebar-desktop.svg" alt="SideBar">
-        <div class="absolute inset-0 w-40 h-80 mt-6 px-8">
-          <div class="mt-3 px-6">
-          
-        </div>
-        <div class="content-container text-center absolute inset-0 p-6">
-         <div class="flex flex-col grid-cols-2 gap-3">
-          
-         </div> 
-        </div>
+      </div>
+      <!-- Personal-Info -->
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <router-outlet></router-outlet>
+      </div>
+      <div class="fixed bottom-0 right-0 h-3/6 w-96">
+        <button type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-md px-5 py-2.5 text-center mr-2 mb-2">
+          Next
+        </button>
       </div>
     </div>
   </div>
-  
-<a routerLink="/personal-info">Info</a>
+</div>

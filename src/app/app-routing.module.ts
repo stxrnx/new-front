@@ -4,8 +4,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { PersonalInfoComponent } from './home/personal-info/personal-info.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path:'personal-info', component:PersonalInfoComponent}  
+  {path: '', component: HomeComponent, children:[
+    {path: 'personal-info', component:PersonalInfoComponent}
+  ]},
+
 ];
 
 @NgModule({
