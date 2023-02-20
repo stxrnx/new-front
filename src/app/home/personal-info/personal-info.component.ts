@@ -6,8 +6,7 @@ import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@ang
   templateUrl: './personal-info.component.html',
   styleUrls: ['./personal-info.component.css']
 })
-export class PersonalInfoComponent implements OnInit { 
-
+export class PersonalInfoComponent implements OnInit {
 
 
    form = this.fb.group({
@@ -19,9 +18,7 @@ export class PersonalInfoComponent implements OnInit {
        validators: [Validators.required, Validators.email],
        updateOn:'blur'
      }],
-     phone : this.fb.array([
-      this.fb.control('')
-     ])
+     phones : this.fb.array([])
    });
 
    get nome(){
@@ -32,8 +29,8 @@ export class PersonalInfoComponent implements OnInit {
     return this.form.controls['email'];
   }
 
-   get phone(){
-    return this.form.get('phone') as FormArray;
+  get phones(){
+    return this.form.get('phones') as FormArray;
   }
 
   constructor(private fb : FormBuilder) {
@@ -48,6 +45,6 @@ export class PersonalInfoComponent implements OnInit {
   }
 
    addPhone(){
-    this.phone.push(this.fb.control(''));
+    this.phones.push(new FormControl(this.form.get('phones')));
    }
 }
