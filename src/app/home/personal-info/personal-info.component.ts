@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder,Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-personal-info',
@@ -12,7 +12,7 @@ export class PersonalInfoComponent implements OnInit {
    form = this.fb.group({
      name:['',{
        validators: [Validators.required, Validators.minLength(4)],
-       updatOn:'blur'
+       updateOn:'blur'
      }],
      email:['',{
        validators: [Validators.required, Validators.email],
@@ -30,7 +30,7 @@ export class PersonalInfoComponent implements OnInit {
   }
 
   get phones(){
-    return this.form.get('phones') as FormArray;
+    return this.form.controls["phones"] as FormArray;
   }
 
   constructor(private fb : FormBuilder) {
@@ -45,6 +45,8 @@ export class PersonalInfoComponent implements OnInit {
   }
 
    addPhone(){
-    this.phones.push(new FormControl(this.form.get('phones')));
+    const telefono = this.fb.control('');
+
+    this.phones.push(telefono)
    }
 }

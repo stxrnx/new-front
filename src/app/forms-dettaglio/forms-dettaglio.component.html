@@ -1,0 +1,19 @@
+<form [formGroup]="form">
+    <ng-container formArrayName="indirizzi">
+        <ng-container *ngFor="let x of indirizzi.controls">
+            
+            <div [formGroup]="x">
+                <input type="text" formControlName="via" placeholder="Via">
+                <div class="mt-4">
+                    <input type="text" placeholder="Civico" formControlName="Civico">
+                </div>
+                <div class="mt-4">
+                    <input type="text" formControlName="cap" placeholder="CAP">
+                </div>
+            </div>
+        </ng-container>
+        <div class="mt-6">
+            <button type="button" (click)="addIndirizzo()">SDNÀSDNFSDBJF</button>
+        </div>
+    </ng-container>
+</form> 

@@ -18,19 +18,12 @@
                 <span class="mt-2 text-sm font-extralight">Si prega di inserire un'email</span>
             </div>
             <div class="mb-6" formArrayName="phones">
-                <label for="phones" class="block mb-2 text-sm font-medium text-blue-600">Phone</label>
-                <input type="text" id="phones" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Inserire numero di telefono es.(+39 123-45-6789)"  formControlName="phone" >
-                <span class="mt-2 text-sm font-extralight text-red-600" *ngIf="!form?.get('phones')?.valid && form.get('phones')?.touched">Si prega di inserire mettere il numero di telefono</span>
-                <div class="mb-2">
-                    <h3>Aggiungi Numero Di Telefono</h3>
-                    <button type="button" (click)="addPhone()" class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Add Phone</button>
-                </div>
-                <div *ngFor="let p of phones.controls; let i = index">
-                    <label for="phones-{{i}}" class="block mb-2 text-sm font-medium text-blue-600 dark:text-white">Numero Tel.</label>
-                    <input type="text" id="phones-{{i}}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  placeholder="Inserire numero telefono" [formControlName]="i" >
-                </div>
+              <ng-container *ngFor="let phone of phones.controls; let i = index">
+                <input type="text" [formControlName]="i" placeholder="giu">
+              </ng-container>
             </div>
             <div class="fixed bottom-0 right-0 h-2/5 w-96">
+                <button type="button" (click)="addPhone()">Clicca qui</button>
                 <button type="submit"
                   class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
                   Next

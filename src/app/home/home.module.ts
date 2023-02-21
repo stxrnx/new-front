@@ -5,11 +5,13 @@ import { PersonalInfoComponent } from './personal-info/personal-info.component';
 import {RouterModule } from '@angular/router';
 import { HomeRoutingModule } from './home.routing.module';
 import { CommonModule } from '@angular/common';
+import { FormsDettaglioComponent } from '../forms-dettaglio/forms-dettaglio.component';
 
 @NgModule({
     declarations:[
         HomeComponent,
-        PersonalInfoComponent
+        PersonalInfoComponent,
+        FormsDettaglioComponent
     ],
     imports:[
         CommonModule,
