@@ -43,12 +43,12 @@ export class PersonalInfoComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log(this.form)
+    console.log(this.form.value)
   }
 
    addPhone(){
     const telefono = this.fb.control('', Validators.required);
 
-    this.phones.push(telefono)
+    this.phones.push(telefono);
    }
 }
