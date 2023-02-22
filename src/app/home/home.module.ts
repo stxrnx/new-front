@@ -6,12 +6,14 @@ import {RouterModule } from '@angular/router';
 import { HomeRoutingModule } from './home.routing.module';
 import { CommonModule } from '@angular/common';
 import { FormsDettaglioComponent } from '../forms-dettaglio/forms-dettaglio.component';
+import { ListaBottoniComponent } from '../lista-bottoni/lista-bottoni.component';
 
 @NgModule({
     declarations:[
         HomeComponent,
         PersonalInfoComponent,
-        FormsDettaglioComponent
+        FormsDettaglioComponent,
+        ListaBottoniComponent
     ],
     imports:[
         CommonModule,
