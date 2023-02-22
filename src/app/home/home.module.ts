@@ -1,3 +1,4 @@
+import { CartaCreditoComponent } from './../carta-credito/carta-credito.component';
 import {ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home.component';
 import { NgModule } from "@angular/core";
@@ -13,7 +14,8 @@ import { ListaBottoniComponent } from '../lista-bottoni/lista-bottoni.component'
         HomeComponent,
         PersonalInfoComponent,
         FormsDettaglioComponent,
-        ListaBottoniComponent
+        ListaBottoniComponent,
+        CartaCreditoComponent
     ],
     imports:[
         CommonModule,

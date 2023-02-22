@@ -18,7 +18,9 @@ export class PersonalInfoComponent implements OnInit {
        validators: [Validators.required, Validators.email],
        updateOn:'blur'
      }],
-     phones : this.fb.array([])
+     phones : this.fb.array([
+      this.fb.control('', Validators.required),
+     ])
    });
 
    get nome(){
@@ -45,7 +47,7 @@ export class PersonalInfoComponent implements OnInit {
   }
 
    addPhone(){
-    const telefono = this.fb.control('');
+    const telefono = this.fb.control('', Validators.required);
 
     this.phones.push(telefono)
    }
