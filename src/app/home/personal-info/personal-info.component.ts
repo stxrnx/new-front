@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder,Validators } from '@angular/forms';
 
@@ -7,6 +8,8 @@ import { FormArray, FormBuilder,Validators } from '@angular/forms';
   styleUrls: ['./personal-info.component.css']
 })
 export class PersonalInfoComponent implements OnInit {
+
+  show: boolean = false
 
 
    form = this.fb.group({
@@ -19,7 +22,8 @@ export class PersonalInfoComponent implements OnInit {
        updateOn:'blur'
      }],
      phones : this.fb.array([
-      this.fb.control('', Validators.required),
+      this.fb.control('+39 ',[Validators.required,Validators.pattern("^[0-9 +]*$"),
+      Validators.minLength(13), Validators.maxLength(14)]),
      ])
    });
 
@@ -43,11 +47,11 @@ export class PersonalInfoComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log(this.form.value)
   }
 
    addPhone(){
-    const telefono = this.fb.control('', Validators.required);
+    const telefono = this.fb.control('+39 ',[Validators.required,Validators.pattern("^[0-9 +]*$"),
+    Validators.minLength(14), Validators.maxLength(14)]);
 
     this.phones.push(telefono);
    }
