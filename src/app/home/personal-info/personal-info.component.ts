@@ -64,8 +64,6 @@ export class PersonalInfoComponent implements OnInit {
    }
 
    removePhone(i : number){
-    if(i <= 2){
-      return this.phones.removeAt(i)
-    }
+    this.phones.removeAt(i);
    }
 }

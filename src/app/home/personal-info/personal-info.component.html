@@ -30,17 +30,17 @@
                   <span class="mt-2 text-sm font-extralight" *ngIf="!form?.get('phones')?.valid && form.get('phones')?.touched">Si prega di compilare il campo</span>
                   <span>ciao</span>
               </div>
-              <div class="absolute bottom-0 right-0 h-1/2 w-1/5">
-                <button type="button" (click)="removePhone(i)"  class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
-                  + Tel.
+              <div class="absolute bottom-0 right-0 h-1/2 w-1/12">
+                <button type="button" (click)="removePhone(i)"  class="text-white bg-gradient-to-r from-red-500 to-red-700 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                  - Tel.
                 </button>
               </div>
             </div>
-
+            <!--AGGIUSTARE IL CSS DEL COMPONENTE-->
             </div>
-            <div class="absolute bottom-0 right-0 h-1/2 w-1/12">
-              <button type="button" (click)="addPhone()" class="text-white bg-gradient-to-r from-red-500 to-red-700 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
-                - Tel.
+            <div class="absolute bottom-0 right-0 h-1/2 w-1/5">
+              <button type="button" (click)="addPhone()" class="text-white bg-gradient-to-r from-cyan-500 to-blue-700 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                + Tel.
               </button>
             </div>
             <div>Phones  Valid : {{phones?.valid}}</div>
