@@ -1,6 +1,9 @@
+import { Router } from '@angular/router';
 
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder,Validators } from '@angular/forms';
+import { numeroTelefono } from '../../validators/phones.validator';
+
 
 @Component({
   selector: 'app-personal-info',
@@ -9,12 +12,14 @@ import { FormArray, FormBuilder,Validators } from '@angular/forms';
 })
 export class PersonalInfoComponent implements OnInit {
 
-  show: boolean = false
+  show: boolean = false;
+
+  message : string = '';
 
 
    form = this.fb.group({
      name:['',{
-       validators: [Validators.required, Validators.minLength(4)],
+       validators: [Validators.required],
        updateOn:'blur'
      }],
      email:['',{
@@ -22,8 +27,7 @@ export class PersonalInfoComponent implements OnInit {
        updateOn:'blur'
      }],
      phones : this.fb.array([
-      this.fb.control('+39 ',[Validators.required,Validators.pattern("^[0-9 +]*$"),
-      Validators.minLength(13), Validators.maxLength(14)]),
+      this.fb.control('+39 ',[Validators.required, numeroTelefono(14)])
      ])
    });
 
@@ -39,7 +43,7 @@ export class PersonalInfoComponent implements OnInit {
     return this.form.controls["phones"] as FormArray;
   }
 
-  constructor(private fb : FormBuilder) {
+  constructor(private fb : FormBuilder, private router : Router) {
   }
 
   ngOnInit(): void {
@@ -50,9 +54,18 @@ export class PersonalInfoComponent implements OnInit {
   }
 
    addPhone(){
-    const telefono = this.fb.control('+39 ',[Validators.required,Validators.pattern("^[0-9 +]*$"),
-    Validators.minLength(14), Validators.maxLength(14)]);
+    const telefono = this.fb.control('+39 ',[Validators.required, numeroTelefono(14)]);
 
-    this.phones.push(telefono);
+    if(this.phones.length < 5){
+      this.phones.push(telefono);
+    } else{
+      this.message = 'pippo';
+    }
+   }
+
+   removePhone(i : number){
+    if(i <= 2){
+      return this.phones.removeAt(i)
+    }
    }
 }
