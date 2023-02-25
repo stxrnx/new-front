@@ -13,12 +13,12 @@ const routes: Routes = [
             {
                 path: '', component: ListaBottoniComponent, children: [
                     { path: 'personal-info', component: PersonalInfoComponent },
-                    { path: 'forms', component: FormsDettaglioComponent},
-                    {path: 'pagamento', component:CartaCreditoComponent}
+                    { path: 'forms', component: FormsDettaglioComponent}
                 ]
             }
         ]
-    }
+    },
+    {path: 'pagamento', component: CartaCreditoComponent}
 ]
 
 @NgModule({
